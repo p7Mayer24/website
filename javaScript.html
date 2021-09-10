@@ -1,14 +1,92 @@
 <html>
 <head>
 
+<script language="javaScript">
+
+function guessing()
+{
+/* 
+		1. Create (declare) three variables: rand (for random number)
+											usersGuess (the guess that the user makes)
+											numOfGuesses (increases by 1 each time the user makes another guess.)
+		2. Set numOfGuesses to 0.
+		3. Create a random number between 1 and 10. Store this in rand.
+		4. Set usersGuess to -1. (Thinik about why -1)
+		5. Create a while loop
+				while (rand != usersGuess) // == tests equality/ != tests if rand does NOT EQUAL uG
+		6. Inside while,
+			6a. increase numOfGuesses.
+			6b. prompt the user to input a new guess
+			6c. if usersGuess is too low, alert this fact.
+			6d. if usersGuess is too high, alert this.
+		7. After the while, alert that they are correct and how many guesses it too.
+*/
+
+
+	var usersGuess = -1;
+	var numOfGuesses = 0; 
+	var rand = Math.random()*10 + 1;
+	rand = parseInt(rand);
+
+	
+	while( rand != usersGuess )
+	{
+		usersGuess = prompt("Enter a number between 1-10");
+		numOfGuesses = numOfGuesses +1;
+			
+		if( usersGuess < rand )
+		{
+			alert("Your guess is too low.");
+		}
+		if( usersGuess > rand )
+		{
+			alert("Your guess is too high.");
+		}
+		if( usersGuess == rand )
+		{
+			alert("You are correct!");
+		}
+	
+	}
+		
+}
+
+
+function greeting1()
+{
+	alert("hello");
+}
+function greeting2()
+{
+	var name = prompt("what is your name?");
+	alert("Hello there, " + response); 										// = is the assignment operator
+}                                   // This assigns the element on the right to the element on the left
+</script>
+
 </head>
-<body>
+<body bgcolor="#FFFFCC">
+<center>
+<font color="black" face="Fantasy">
 
 <h1> My First JavaScript Page </h1>
 
+</font>
+
+click here to go back to my main <a href="index.html"> website page! <a/>
+<br>
+</br>
+
+<input type="button" value="Click for message" onclick="greeting1()" />
 
 
+<hr/>
 
 
+<input type="button" value="Click for question" onclick="greeting2()" />
+
+<hr/>
+
+<input type="button" value="Number Guessing Game" onclick="guessing()" />
+</center>
 </body>
 </html>
