@@ -1,0 +1,99 @@
+<html>
+<head>
+<script language="javaScript">
+var counter = 0
+
+var clipLength = [ 5, 2, 4, 2 ]
+var picList = ["Slideshow/SerenaW.jpg", 
+				"Slideshow/BlairW.jpg", 
+				"Slideshow/NateA.jpg",
+				"Slideshow/ChuckB.jpg",
+				"Slideshow/DanH.jpg",
+				"Slideshow/JennyH.jpg", ];
+				
+var clipList = ["Slideshow/sounds/serenasound.mp3",
+				"Slideshow/sounds/blairsound.mp3",
+				"Slideshow/sounds/natesound.mp3",
+				"Slideshow/sounds/chucksound.mp3",
+				"Slideshow/sounds/dansound.mp3",
+				"Slideshow/sounds/jennysound.mp3", ];
+				
+var timer;
+var autoStart = false;
+
+function nextPic()
+{
+	document.getElementById("display").src = picList[counter];
+	document.getElementById("player").src = clipList[counter];
+	document.getElementById("player").play();
+	
+	if( counter == picList.length-1)
+	{
+		counter = 0;
+	}
+	else
+	{
+		counter = counter+1;
+	}
+}
+
+function runButton()
+{
+	if( autoStart == false)
+	{
+		autoStart = true;
+		document.getElementById("runButton").value = "Pause";
+	}
+	else
+	{
+		autoStart = false;
+		document.getElementById("runButton").value = "Play";
+	}
+
+	autoPlay();
+}
+
+function autoPlay()
+{
+	if( autoStart == true )
+	{
+		nextPic();
+		var clipTime = clipList[counter].length;
+		timer = setTimeout( "autoPlay()", 5000 )
+		if ( counter = picList.length-1)
+		{
+			counter = 0;
+		}
+		else
+		{
+			counter = counter+1;
+		}
+	}
+	else
+	{
+		clearTimeout(timer);
+	}
+}
+
+</script>  
+
+</head>
+<body>
+<center>
+<h1> My Slideshow on Gossip Girl Characters! </h1>
+<h2> click here to go back to my <a href="index.html"> home page! <a/> </h2>
+
+<input type = "button" value = "Next picture" onclick= "nextPic()"/>
+<input type = "button" value = "Run Slideshow" id= "runButton" onclick= "runButton()" />
+
+<br/></br>
+
+<img src = "Slideshow/2.jfif" id="display" width="600"/>
+
+<audio id="player"> </audio>
+
+</center>
+
+
+</body>
+</html>
