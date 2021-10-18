@@ -3,7 +3,7 @@
 <script language="javaScript">
 var counter = 0
 
-var clipLength = [ 5, 2, 4, 2 ]
+var clipLength = [ 5, 5, 2, 4, 2 ]
 var picList = ["Slideshow/SerenaW.jpg", 
 				"Slideshow/BlairW.jpg", 
 				"Slideshow/NateA.jpg",
@@ -59,7 +59,7 @@ function autoPlay()
 	{
 		nextPic();
 		var clipTime = clipList[counter].length;
-		timer = setTimeout( "autoPlay()", 5000 )
+		timer = setTimeout( "autoPlay()", 6000 )
 		if ( counter = picList.length-1)
 		{
 			counter = 0;
