@@ -4,19 +4,19 @@
 var counter = 0
 
 var clipLength = [ 5, 5, 2, 4, 2 ]
-var picList = ["Slideshow/SerenaW.jpg", 
-				"Slideshow/BlairW.jpg", 
-				"Slideshow/NateA.jpg",
-				"Slideshow/ChuckB.jpg",
-				"Slideshow/DanH.jpg",
-				"Slideshow/JennyH.jpg", ];
+var picList = ["Images/Slideshow/SerenaW.jpg", 
+				"Images/Slideshow/BlairW.jpg", 
+				"Images/Slideshow/NateA.jpg",
+				"Images/Slideshow/ChuckB.jpg",
+				"Images/Slideshow/DanH.jpg",
+				"Images/Slideshow/JennyH.jpg", ];
 				
-var clipList = ["Slideshow/sounds/serenasound.mp3",
-				"Slideshow/sounds/blairsound.mp3",
-				"Slideshow/sounds/natesound.mp3",
-				"Slideshow/sounds/chucksound.mp3",
-				"Slideshow/sounds/dansound.mp3",
-				"Slideshow/sounds/jennysound.mp3", ];
+var clipList = ["sounds/serenasound.mp3",
+				"sounds/blairsound.mp3",
+				"sounds/natesound.mp3",
+				"sounds/chucksound.mp3",
+				"sounds/dansound.mp3",
+				"sounds/jennysound.mp3", ];
 				
 var timer;
 var autoStart = false;
@@ -60,14 +60,7 @@ function autoPlay()
 		nextPic();
 		var clipTime = clipList[counter].length;
 		timer = setTimeout( "autoPlay()", 6000 )
-		if ( counter = picList.length-1)
-		{
-			counter = 0;
-		}
-		else
-		{
-			counter = counter+1;
-		}
+		
 	}
 	else
 	{
@@ -88,7 +81,7 @@ function autoPlay()
 
 <br/></br>
 
-<img src = "Slideshow/2.jfif" id="display" width="600"/>
+<img src = "Images/Slideshow/2.jfif" id="display" width="600"/>
 
 <audio id="player"> </audio>
 
