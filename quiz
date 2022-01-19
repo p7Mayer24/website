@@ -1,0 +1,113 @@
+<html>
+<head>
+<script language = JavaScript>
+var words = ["Eiffel Tower",
+			"London Bridge",
+			"Empire State Building",
+			"Golden Gate Bridge"
+			]
+			
+var defs = ["Paris",
+			"London",
+			"New York",
+			"San Francisco"
+			]
+			
+var used = ["placeholder"]
+
+var score = 0;
+
+var counter = 0;
+
+
+function nextQ()
+{
+	var termsOrDefs = document.getElemntById("terms").checked;
+	displayClue(termsOrDefs)
+	document.getElemntById("answer").value = "";
+	document.getElemntById("image").style.visibility = "hidden";
+	
+}
+
+function checkAnswer()
+{
+
+	var userAns = document.getElemntById("answer").value
+	
+	if(userAns == defs[counter])
+	{
+		score ++ 5;
+		alert("Correct! Your score is " + score);
+		
+		document.getElemntById("winLoss").src = "images/correct.jpg";
+	}
+	else
+	{
+		alert("Incorrect.")
+		
+		document.getElemntById("winLoss").src = "images/wrong.jpg";
+	}
+		
+	document.getElemntById("image").style.visibility = "visible";
+	
+	if(counter < words.length-1)
+	{
+		counter++;
+	}
+	else
+	{
+		counter = 0 
+		endQuiz();
+	}
+}
+
+function displayClue
+
+function endQuiz()
+{
+	alert("Good job! You finished the quiz! Your score is "+ score +" out of ")
+	
+	score = 0;
+	counter = 0;
+}
+
+</script>
+</head>
+<body>
+<center>
+<h1>Vocab Quiz</h1>
+
+<input type="radio" id="terms" name="qType" onchange="restart()" checked>
+  <label for="terms">Words</label>
+<input type="radio" id="defs" name="qType" on>
+  <label for="defs">Definitions</label>
+<input type="button" value="Next" onclick="nextQ()"/>
+
+<br/><br/>
+
+<input type = "text" id="clue" readonly size=40>
+
+<br/><br/>
+
+<input type = "text" id="answer" onfocusout="checkAnswer()" size=40>
+
+<br/>
+<br/><br/>
+
+<input type="button" value="Check Answer" /> 
+
+<br/><br/>
+<br/><br/>
+
+<div id="image" style="position:absolute; top:250; left:450; visibility:hidden;">
+
+<img id="winLoss" src="images/correct.jpg">
+
+</div>
+
+</center> 
+</body>
+</html>
+
+
+
