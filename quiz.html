@@ -1,6 +1,7 @@
 <html>
 <head>
 <script language = JavaScript>
+
 var words = ["Eiffel Tower",
 			"London Bridge",
 			"Empire State Building",
@@ -13,7 +14,7 @@ var defs = ["Paris",
 			"San Francisco"
 			]
 			
-var used = ["placeholder"]
+//var used = ["placeholder"]
 
 var asked = [ false,
 			  false,
@@ -23,6 +24,8 @@ var asked = [ false,
 			
 var numQAsked = 0;
 
+var qAsked = 0;
+
 var score = 0;
 
 var counter = 0;
@@ -30,33 +33,33 @@ var counter = 0;
 
 function nextQ()
 {
-	var termsOrDefs = document.getElemntById("terms").checked;
-	displayClue(termsOrDefs)
-	document.getElemntById("answer").value = "";
-	document.getElemntById("image").style.visibility = "hidden";
+	var termsOrDefs = document.getElementById("terms").checked;
+	displayClue(termsOrDefs);
+	document.getElementById("answer").value = "";
+	document.getElementById("image").style.visibility = "hidden";
+	
 	
 }
 
-function checkAnswer()
+function checkAnswer(terms)
 {
-
-	var userAns = document.getElemntById("answer").value
+	// we need code to assign to the correct list for answer.
 	
 	if(userAns == defs[counter])
 	{
-		score ++ 5;
+		score += 5 ;
 		alert("Correct! Your score is " + score);
 		
-		document.getElemntById("winLoss").src = "images/correct.jpg";
+		document.getElementById("winLoss").src = "images/correct.jpg";
 	}
 	else
 	{
 		alert("Incorrect.")
 		
-		document.getElemntById("winLoss").src = "images/wrong.jpg";
+		document.getElementById("winLoss").src = "images/wrong.jpg";
 	}
 		
-	document.getElemntById("image").style.visibility = "visible";
+	document.getElementById("image").style.visibility = "visible";
 	
 	if(counter < words.length-1)
 	{
@@ -69,36 +72,69 @@ function checkAnswer()
 	}
 }
 
-function displayClue
+function displayClue(terms)
+{
+	
+	
+	qAsked = getUnusedIndex();
+	if(terms == true)
+	{
+			document.getElementById("clue").value = words[qAsked];
+	}
+	else
+	{
+			document.getElementById("clue").value = defs[qAsked];
+	}
+
+}
+/*
+function nextA()
+{
+	var termsOrDefs = document.getElementById("terms").checked;
+}
+
 
 function doStuff()
 {
-	alert(getUnusedIndex());
-
+	var temp = getUnusedIndex();
+	if( temp >-1)
+		alert(temp));
+	else
+		alert("All question have been asked");
 }
-
+*/
 function getUnusedIndex()
 {
-	alert("hello");
-	var rand = parseInt(Math.random()*asked.length;
 	
-	if( asked[rand] == true )
+	var rand = Math.floor(Math.random()*asked.length);
+	
+	if( counter < asked.length )
 	{
-		rand = Math.floor(Math.random()*asked.length);
-	
+		while( asked[rand] == true )
+		{
+			rand = Math.floor(Math.random()*asked.length);
+		}
 	}
+	else
+	{
+		rand = -1;
+	}
+
 	
 	asked[rand] = true;
+	//qAsked++;
+	
+	return rand;
 }
-
+/*
 function endQuiz()
 {
-	//alert("Good job! You finished the quiz! Your score is "+ score +" out of ")
+	alert("Good job! You finished the quiz! Your score is "+ score +" out of ")
 	
 	//score = 0;
 	//counter = 0;
 }
-
+*/
 </script>
 </head>
 <body>
