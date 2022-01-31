@@ -5,18 +5,20 @@
 var words = ["Eiffel Tower",
 			"London Bridge",
 			"Empire State Building",
-			"Golden Gate Bridge"
+			"Golden Gate Bridge",
+			"Leaning Tower of Pisa"
 			]
 			
 var defs = ["Paris",
 			"London",
 			"New York",
-			"San Francisco"
+			"San Francisco",
+			"Italy"
 			]
 			
-//var used = ["placeholder"]
 
 var asked = [ false,
+			  false,
 			  false,
 			  false,
 			  false
@@ -38,43 +40,57 @@ function nextQ()
 	document.getElementById("answer").value = "";
 	document.getElementById("image").style.visibility = "hidden";
 	
-	
 }
 
 function checkAnswer(terms)
 {
-	// we need code to assign to the correct list for answer.
 	
-	if(userAns == defs[counter])
+	var answerList;
+	if(terms == true)
 	{
-		score += 5 ;
-		alert("Correct! Your score is " + score);
+		answerList = defs;
 		
-		document.getElementById("winLoss").src = "images/correct.jpg";
 	}
 	else
 	{
-		alert("Incorrect.")
+		answerList = words;
+	}
+	
+	var userAns = document.getElementById("answer").value
+	
+	if(userAns == answerList[qAsked])
+	{
+		score += 5;
+		alert("Correct! Your score is "+score);
+		
+		document.getElementById("winLoss").src = "images/correct.jpg";
+	}
+	else 
+	{
+		alert("Sorry, your score is incorrect");
+	
 		
 		document.getElementById("winLoss").src = "images/wrong.jpg";
 	}
-		
+	
+	var midPoint = window.innerWidth
+	document.getElementById("image").style.left = ((midPoint/2)-158);
 	document.getElementById("image").style.visibility = "visible";
 	
-	if(counter < words.length-1)
+	
+	if(counter < words.length-1) 
 	{
 		counter++;
 	}
 	else
 	{
-		counter = 0 
+		counter = 0
 		endQuiz();
 	}
 }
 
 function displayClue(terms)
 {
-	
 	
 	qAsked = getUnusedIndex();
 	if(terms == true)
@@ -87,10 +103,11 @@ function displayClue(terms)
 	}
 
 }
-/*
+
 function nextA()
 {
 	var termsOrDefs = document.getElementById("terms").checked;
+	checkAnswer(termsOrDefs)
 }
 
 
@@ -98,11 +115,11 @@ function doStuff()
 {
 	var temp = getUnusedIndex();
 	if( temp >-1)
-		alert(temp));
+		alert(temp);
 	else
 		alert("All question have been asked");
 }
-*/
+
 function getUnusedIndex()
 {
 	
@@ -126,15 +143,22 @@ function getUnusedIndex()
 	
 	return rand;
 }
-/*
+
 function endQuiz()
 {
+	
 	alert("Good job! You finished the quiz! Your score is "+ score +" out of ")
 	
 	//score = 0;
-	//counter = 0;
+	//counter = 0; 
+	for(I = 0; i< asked.length; i++)
+	{
+		
+		asked[i] = false;
+	
+	}
 }
-*/
+
 </script>
 </head>
 <body>
@@ -173,9 +197,8 @@ function endQuiz()
 
 </div>
 
+<h2> Click here to go back to my <a href="https://p7mayer24.github.io/website/"> main page! <a/> </h2>
+
 </center> 
 </body>
 </html>
-
-
-
