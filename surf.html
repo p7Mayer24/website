@@ -1,0 +1,101 @@
+<html>
+<head>
+<script language="javaScript">
+
+var counter = 0
+var surfspots = [
+						["Images/surf/waikikiHawaii.jpg", "Waikiki", "Beginner"],
+						["Images/surf/warf.jpg", "Warf", "Beginner"],
+						["Images/surf/sannofreCalifornia.png", "Sannofre", "Beginner"],
+						["Images/surf/cabo.jfif", "Cabo, Mexico", "Intermiedate"],
+						["Images/surf/"balian.jpg", "Balian, Bali", "Intermiedate"],
+						["Images/surf/"],
+						["Images/surf/laSaladita.jpg", "La Saladita, Mexico", "Advanced"],
+						["Images/surf/ni.jfif", "P opoyo, Nicaragua", "Advanced"], 
+						["Images/surf/", "" , "Advanced"],
+						["Images/surf/theBox.jfif", "The Box, Australia", "Expert"],
+						["Images/surf/teahupoo.jfif", "Teahupo’o, Tahiti", "Expert"],
+						["Images/surf/tasnamia.jpg", "Tasmania, Australia", "Expert"]
+				];
+	
+function getMiniList(skillLevel)
+{
+	var miniList = new Array(2);
+	miniList.push(surfspots[1]);
+	alert(miniList);
+}	
+
+// for(i =0; i<surfspots.length; i++)
+
+// alert(surfspots[i][2]);
+
+
+function displaySurf(surfNum)
+{
+	
+	var surfList
+	
+	
+	if( surfNum == 1)
+	{
+		alert("Gotta start from somewhere!")
+		
+		surfList = surfspots;
+	}
+	else if( surfNum == 2)
+	{
+		alert("Radical, see your spots.")
+		
+		surfList = surfspots;
+	}
+	else if( surfNum == 3)
+	{
+		alert("Great, here are some spots for you.")
+		
+		surfList = surfspots;
+	}
+	else if( surfNum == 4)
+	{
+		alert("Wow, I am impressed!")
+		
+		surfList = surfspots;
+	}
+		
+		
+	document.getElementById("pic").src = surfList[counter];
+	
+		if( counter == surfList.length-1)
+		{
+			counter = 0;
+		}
+		else
+		{
+		counter = counter+1;
+		}
+	
+}
+
+
+</script>  
+</head>
+<body bgcolor="99CCFF">
+<center>
+<font color="black" size="4"> 
+
+<h1> Need help finding a surf spot for you? I can help! </h1>
+</font>
+<font color="black" size="2"> 
+<h1> Choose Your Surfing Skill Level!! </h1>
+</font>
+<img id="pic" width="250" />
+<br/></br>
+<br/></br>
+</font>
+
+<input type = "button" value = "Beginner"  id="pic" onclick= "getMiniList('beginner')"/>
+<input type = "button" value = "Intermiedate" onclick= "displaySurf(2)" />
+<input type = "button" value = "Advanced" onclick= "displaySurf(3)"/>
+<input type = "button" value = "Expert" onclick= "displaySurf(4)" />
+</center>
+</body>
+</html>
