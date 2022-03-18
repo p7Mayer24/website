@@ -4,18 +4,18 @@
 
 var counter = 0
 var surfspots = [
-						["Images/CreatePT/surf/waikikiHawaii.jpg", "Waikiki", "Beginner"],
-						["Images/CreatePT/surf/warf.jpg", "Warf", "Beginner"],
-						["Images/CreatePT/surf/sannofreCalifornia.png", "Sannofre", "Beginner"],
-						["Images/CreatePT/surf/cabo.jfif", "Cabo, Mexico", "Intermiedate"],
-						["Images/CreatePT/surf/balian.jpg", "Balian, Bali", "Intermiedate"],
-						["Images/CreatePT/surf/haleiwa.jpg", "Haleiwa Beach Park, Hawaii", "Intermiedate"],
-						["Images/CreatePT/surf/laSaladita.jpg", "La Saladita, Mexico", "Advanced"],
-						["Images/CreatePT/surf/ni.jfif", "Popoyo, Nicaragua", "Advanced"], 
-						["Images/CreatePT/surf/pinilla.jfif","Hacienda Pinilla, Costa Rica", "Advanced"],
-						["Images/CreatePT/surf/theBox.jfif", "The Box, Australia", "Expert"],
-						["Images/CreatePT/surf/teahupoo.jfif", "Teahupo’o, Tahiti", "Expert"],
-						["Images/CreatePT/surf/tasnamia.jpg", "Tasmania, Australia", "Expert"]
+						["surf/waikikiHawaii.jpg", "Waikiki, Hawaii", "Beginner"],
+						["surf/warf.jpg", "Monterey Warf, California", "Beginner"],
+						["surf/sannofreCalifornia.png", "Sannofre", "Beginner"],
+						["surf/cabo.jfif", "Cabo, Mexico", "Intermiedate"],
+						["surf/balian.jpg", "Balian, Bali", "Intermiedate"],
+						["surf/haleiwa.jpg", "Haleiwa Beach Park, Hawaii", "Intermiedate"],
+						["surf/laSaladita.jpg", "La Saladita, Mexico", "Advanced"],
+						["surf/ni.jfif", "Popoyo, Nicaragua", "Advanced"], 
+						["surf/pinilla.jfif","Hacienda Pinilla, Costa Rica", "Advanced"],
+						["surf/theBox.jfif", "The Box, Australia", "Expert"],
+						["surf/teahupoo.jfif", "Teahupo’o, Tahiti", "Expert"],
+						["surf/tasnamia.jpg", "Tasmania, Australia", "Expert"]
 				];
 	
 function getMiniList(skillLevel)
@@ -30,7 +30,7 @@ function getMiniList(skillLevel)
 	 }
 	
 	int randImg = (Math.floor(Math.random() * 10)) % 3;
-	//alert(miniList[randImg][0]);
+	alert(miniList[randImg][0]);
 	alert(miniList[randImg][1]);
 	document.getElementById("surfLocation").src= miniList[randImg][0];
 }	
@@ -101,7 +101,7 @@ function displaySurf(surfNum)
 <input type = "button" value = "Advanced" onclick= "getMiniList('Advanced')"/>
 <input type = "button" value = "Expert" onclick= "getMiniList('Expert')" />
 <br/><br/>
-<img id="surfLocation" width="250" src=""/>
+<img id="surfLocation" width="250"/>
 
 
 </center>
