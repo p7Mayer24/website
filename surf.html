@@ -26,15 +26,14 @@ function getMiniList(skillLevel)
 	 {0
 		if(surfspots[i][2] == skillLevel)
 			miniList.push(surfspots[i]);
+	  
 	 }
 	
-	
-	alert(miniList[0][0]);
-	document.getElementById("surfLocation").src= miniList[0][0];
+	int randImg = (Math.floor(Math.random() * 10)) % 3;
+	alert(miniList[randImg][0]);
+	alert(miniList[randImg][1]);
+	document.getElementById("surfLocation").src= miniList[randImg][0];
 }	
-
-// alert(surfspots[i][2]);
-
 
 function displaySurf(surfNum)
 {
