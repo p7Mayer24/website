@@ -33,58 +33,10 @@ function getMiniList(skillLevel)
 	var randImg = Math.floor(Math.random() * 3 );
 	alert(randImg);
 	alert(miniList[randImg][1]);
-	//document.getElementById("surfLocation").src= miniList[randImg][0];
+	document.getElementById("surfLocation").src= miniList[randImg][0];
     document.getElementById("placeName").value= miniList[randImg][1];
     
 }	
-
-    
-    /*
-function displaySurf(surfNum)
-{
-	
-	var surfList
-	
-	
-	if( surfNum == 1)
-	{
-		alert("Gotta start from somewhere!")
-		
-		surfList = surfspots;
-	}
-	else if( surfNum == 2)
-	{
-		alert("Radical, see your spots.")
-		
-		surfList = surfspots;
-	}
-	else if( surfNum == 3)
-	{
-		alert("Great, here are some spots for you.")
-		
-		surfList = surfspots;
-	}
-	else if( surfNum == 4)
-	{
-		alert("Wow, I am impressed!")
-		
-		surfList = surfspots;
-	}
-		
-		
-	document.getElementById("pic").src = surfList[counter][0];
-	
-		if( counter == surfList.length-1)
-		{
-			counter = 0;
-		}
-		else
-		{
-		counter = counter+1;
-		}
-	
-}
-*/
 
 </script>  
 </head>
@@ -107,8 +59,9 @@ function displaySurf(surfNum)
 <input type = "button" value = "Advanced" onclick= "getMiniList('Advanced')"/>
 <input type = "button" value = "Expert" onclick= "getMiniList('Expert')" />
 <br/><br/>
-<img id="surfLocation" width="250"/>
+<img id="surfLocation" width="350"/>
 
+<br/><br/>
 <input type = "text" id="placeName" value = "" size=40 />
 
 
