@@ -7,9 +7,9 @@ var surfspots = [
 						["surf/waikikiHawaii.jpg", "Waikiki, Hawaii", "Beginner"],
 						["surf/warf.jpg", "Monterey Warf, California", "Beginner"],
 						["surf/sannofreCalifornia.png", "Sannofre", "Beginner"],
-						["surf/cabo.jfif", "Cabo, Mexico", "Intermiedate"],
-						["surf/balian.jpg", "Balian, Bali", "Intermiedate"],
-						["surf/haleiwa.jpg", "Haleiwa Beach Park, Hawaii", "Intermiedate"],
+						["surf/cabo.jfif", "Cabo, Mexico", "Intermediate"],
+						["surf/balian.jpg", "Balian, Bali", "Intermediate"],
+						["surf/haleiwa.jpg", "Haleiwa Beach Park, Hawaii", "Intermediate"],
 						["surf/laSaladita.jpg", "La Saladita, Mexico", "Advanced"],
 						["surf/ni.jfif", "Popoyo, Nicaragua", "Advanced"], 
 						["surf/pinilla.jfif","Hacienda Pinilla, Costa Rica", "Advanced"],
@@ -28,11 +28,11 @@ function getMiniList(skillLevel)
 			miniList.push(surfspots[i]);
 	  
 	 }
-    alert(miniList);
+    //alert(miniList);
 	
 	var randImg = Math.floor(Math.random() * 3 );
-	alert(randImg);
-	alert(miniList[randImg][1]);
+	//alert(randImg);
+	//alert(miniList[randImg][1]);
 	document.getElementById("surfLocation").src= miniList[randImg][0];
     document.getElementById("placeName").value= miniList[randImg][1];
     
@@ -44,7 +44,7 @@ function getMiniList(skillLevel)
 <center>
 <font color="black" size="4"> 
 
-<h1> Need help finding a surf spot for you? I can help! </h1>
+<h1> Need help finding surf spots for you? I can help! </h1>
 </font>
 <font color="black" size="2"> 
 <h1> Choose Your Surfing Skill Level!! </h1>
@@ -55,7 +55,7 @@ function getMiniList(skillLevel)
 </font>
 
 <input type = "button" value = "Beginner"  id="pic" onclick= "getMiniList('Beginner')"/>
-<input type = "button" value = "Intermiedate" onclick= "getMiniList('Intermiedate')" />
+<input type = "button" value = "Intermediate" onclick= "getMiniList('Intermediate')" />
 <input type = "button" value = "Advanced" onclick= "getMiniList('Advanced')"/>
 <input type = "button" value = "Expert" onclick= "getMiniList('Expert')" />
 <br/><br/>
@@ -68,3 +68,5 @@ function getMiniList(skillLevel)
 </center>
 </body>
 </html>
+
+
